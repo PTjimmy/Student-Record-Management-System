@@ -1,0 +1,36 @@
+@model IEnumerable<MiniProjectMVC.Models.Student>
+@{
+    ViewBag.Title = "Students";
+}
+
+<h1>Student List</h1>
+<a class="btn btn-primary" href="@Url.Action("Create")">+ Add New Student</a>
+
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Course</th>
+            <th>Semester</th>
+            <th>Enrolled On</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var student in Model)
+    {
+        <tr>
+            <td>@student.Name</td>
+            <td>@student.Email</td>
+            <td>@student.Course</td>
+            <td>@student.Semester</td>
+            <td>@student.EnrollmentDate.ToString("dd MMM yyyy")</td>
+            <td>
+                <a class="btn btn-secondary btn-sm" href="@Url.Action("Details", new { id = student.Id })">View</a>
+                <a class="btn btn-primary btn-sm" href="@Url.Action("Edit", new { id = student.Id })">Edit</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

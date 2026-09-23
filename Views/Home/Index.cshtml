@@ -1,0 +1,25 @@
+@{
+    ViewBag.Title = "Home";
+}
+
+<h1>Welcome to the Student Record Management System</h1>
+<p>
+    This mini project is built using <strong>ASP.NET MVC 5 (.NET Framework)</strong>.
+    It demonstrates page navigation, model binding, form validation, and basic
+    CRUD-style functionality without needing an external database.
+</p>
+
+<p>Currently tracking <strong>@ViewBag.StudentCount</strong> student(s).</p>
+
+<a class="btn btn-primary" href="@Url.Action("Index", "Students")">View Student List</a>
+<a class="btn btn-secondary" href="@Url.Action("Create", "Students")">Add New Student</a>
+
+<h3 style="margin-top:32px;">Pages in this project</h3>
+<ul>
+    <li><strong>Home</strong> — landing page (this page)</li>
+    <li><strong>Students</strong> — list of all students</li>
+    <li><strong>Add Student</strong> — form to create a new student record</li>
+    <li><strong>Student Details / Edit</strong> — view and update a single record</li>
+    <li><strong>About</strong> — information about the project</li>
+    <li><strong>Contact</strong> — a contact form demonstrating POST + validation</li>
+</ul>

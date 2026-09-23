@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewBag.Title - Student Record Management System</title>
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
+            margin: 0;
+            background: #f4f6f9;
+            color: #24303d;
+        }
+        header {
+            background: #1f3b57;
+            color: #fff;
+            padding: 0 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        header .brand {
+            font-size: 20px;
+            font-weight: 600;
+            padding: 16px 0;
+        }
+        nav a {
+            color: #dce6f0;
+            text-decoration: none;
+            padding: 20px 14px;
+            display: inline-block;
+            font-size: 15px;
+        }
+        nav a:hover, nav a.active {
+            background: #16293d;
+            color: #fff;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 32px auto;
+            background: #fff;
+            padding: 28px 32px;
+            border-radius: 8px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+        }
+        footer {
+            text-align: center;
+            padding: 18px;
+            color: #7a8794;
+            font-size: 13px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 12px;
+        }
+        th, td {
+            padding: 10px 12px;
+            border-bottom: 1px solid #e5e9ee;
+            text-align: left;
+        }
+        th { background: #eef2f6; }
+        .btn {
+            display: inline-block;
+            padding: 8px 16px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 14px;
+            border: none;
+            cursor: pointer;
+        }
+        .btn-primary { background: #1f6feb; color: #fff; }
+        .btn-secondary { background: #6c757d; color: #fff; }
+        .btn-danger { background: #d9534f; color: #fff; }
+        .btn-sm { padding: 5px 10px; font-size: 13px; }
+        label { display: block; margin-top: 14px; font-weight: 600; font-size: 14px; }
+        input[type=text], input[type=email], input[type=number], input[type=date], textarea, select {
+            width: 100%;
+            padding: 8px 10px;
+            margin-top: 4px;
+            border: 1px solid #cbd3da;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        .validation-summary-errors ul, .text-danger { color: #d9534f; font-size: 13px; }
+        .alert-success {
+            background: #e6f6ec;
+            color: #1f7a3d;
+            padding: 10px 14px;
+            border-radius: 5px;
+            margin-bottom: 16px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="brand">🎓 Student Record System</div>
+        <nav>
+            <a href="@Url.Action("Index", "Home")">Home</a>
+            <a href="@Url.Action("Index", "Students")">Students</a>
+            <a href="@Url.Action("About", "Home")">About</a>
+            <a href="@Url.Action("Contact", "Home")">Contact</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        @if (TempData["Message"] != null)
+        {
+            <div class="alert-success">@TempData["Message"]</div>
+        }
+        @RenderBody()
+    </div>
+
+    <footer>
+        &copy; @DateTime.Now.Year - Student Record Management System | ASP.NET MVC Mini Project
+    </footer>
+</body>
+</html>

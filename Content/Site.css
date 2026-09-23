@@ -1,0 +1,5 @@
+/* Most styling for this project is inlined in Views/Shared/_Layout.cshtml
+   for a zero-dependency setup. Add your own overrides here if needed. */
+body {
+    font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
+}
